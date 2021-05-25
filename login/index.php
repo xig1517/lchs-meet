@@ -4,8 +4,6 @@ $ERRMSG = "";
 
 
 session_start();
-session_destroy();
-
 require './apis/connect.php';
 
 if(isset($_POST['LOGIN']))
