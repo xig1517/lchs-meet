@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './apis/connect.php';
+require '../apis/connect.php';
 $pdo->query('set names utf8;');
 if(isset($_POST['register'])){
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
