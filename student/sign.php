@@ -43,11 +43,16 @@ if(isset($_POST['SIGNIN'])){ //簽到
 
         while($k<9){
             if($h == classInTimeHour[(String)$k] AND $h <= classOutTimeHour[(String)$k]){
+
                 if((int)($k/5)){
+
                     if((int)$min >= 10 AND (int)$min <= 60){
                         echo $k;
                         break;
-                    }else if((int)$min >= 0 AND (int)$min <= 50){
+                    }
+
+                }else{
+                    if((int)$min >= 0 AND (int)$min <= 50){
                         echo $k;
                         break;
                     }else{
@@ -106,12 +111,19 @@ if(isset($_POST['SIGNOUT'])){ //簽退
     }else{
 
         while($k<9){
+
             if($h == classInTimeHour[(String)$k] AND $h <= classOutTimeHour[(String)$k]){ //是否在簽退時間內
+
                 if((int)($k/5)){//下午4節
+
                     if((int)$min >= 0 AND (int)$min <= 10){
                         echo $k;
                         break;
-                    }else if((int)$min >= 50 AND (int)$min <= 60){
+                    }
+
+                }else{
+
+                    if((int)$min >= 50 AND (int)$min <= 60){
                         echo $k;
                         break;
                     }else{
@@ -151,7 +163,7 @@ if(isset($_POST['SIGNOUT'])){ //簽退
                 $stmt = $pdo->prepare($sql_push);
                 $stmt->execute(); // run
 
-                echo "簽到成功! 你獲得了經驗值 0 點.";
+                echo "簽退成功! 你獲得了經驗值 0 點.";
 
             }
 
@@ -160,7 +172,5 @@ if(isset($_POST['SIGNOUT'])){ //簽退
     }
 
 }
-
-
 
 ?>
