@@ -7,7 +7,6 @@ session_start();
 session_destroy();
 
 $id = $_SESSION['id'];
-$post = $_POST['li'];
 
 $classIndex = array();
 $index = array();
